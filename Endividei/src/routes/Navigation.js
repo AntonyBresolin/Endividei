@@ -9,6 +9,7 @@ const Stack = createNativeStackNavigator();
 
 function MyStack() {
   return (
+    // TODO - implementar rotas de navegação autenticadas, possivelmente usarmos o React Context API para isso, o token será com JWT
     <Stack.Navigator>
       <Stack.Screen name="login" component={LoginPage} />
       <Stack.Screen name="register" component={RegisterPage} />
