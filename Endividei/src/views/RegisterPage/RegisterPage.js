@@ -1,6 +1,6 @@
 import React from "react";
 
-const RegisterPage = () => {
+const RegisterPage = ({navigate}) => {
   return <></>;
 };
 

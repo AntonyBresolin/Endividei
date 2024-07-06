@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { StatusBar, Text, TextInput, TouchableOpacity, View, ScrollView, KeyboardAvoidingView, Platform } from 'react-native';
 
-const LoginPage = () => {
+const LoginPage = ({ navigation }) => {
   const usernameRef = useRef('');
   const passwordRef = useRef('');
 
@@ -44,7 +44,9 @@ const LoginPage = () => {
           </TouchableOpacity>
 
           <Text className="text-blue-500 mt-4">Esqueceu a senha?</Text>
-          <Text className="text-blue-500 mt-2">Criar uma conta</Text>
+          <Text className="text-blue-500 mt-2"
+            onPress={() => navigation.navigate('register')}
+          >Criar uma conta</Text>
           <Text className="text-gray-500 mt-6">Ou faça Login com</Text>
 
           <TouchableOpacity className="w-full h-12 bg-blue-700 rounded justify-center items-center mt-2">
