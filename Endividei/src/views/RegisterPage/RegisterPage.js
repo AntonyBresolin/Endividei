@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from "react-native";
 
-const RegisterPage = () => {
+
+const RegisterPage = ({navigate}) => {
   const [naoSalvo, salvar] = useState(true);
 
   return (
@@ -43,6 +44,7 @@ const RegisterPage = () => {
       </TouchableOpacity>
     </View>
   );
+
 };
 
 const styles = StyleSheet.create({
