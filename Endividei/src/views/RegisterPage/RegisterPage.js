@@ -2,44 +2,61 @@ import { useState } from "react";
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from "react-native";
 
 
-const RegisterPage = ({navigate}) => {
-  const [naoSalvo, salvar] = useState(true);
+const RegisterPage = ({navigation}) => {
+  const [name, setName] = useState('');
+  const [login, setLogin] = useState('');
+  const [password, setPassword] = useState('');
+  const [save, setSave] = useState(true);
 
+  const handleRegister = () => {
+    setSave(false);
+    console.log('name:', name, 'login:', login, 'password:', password);
+    navigation.navigate('login');
+  }
   return (
     <View style={styles.container}>
-      <Text style={[styles.label, styles.text]}>
+      <Text style={[styles.label, styles.text]}   >
         Nome completo
       </Text>
       <View style={styles.inputContainer}>
-        <TextInput style={styles.input} />
+        <TextInput style={styles.input} 
+        value={name}
+        onChangeText={setName}
+        />
       </View>
       
       <Text style={[styles.label, styles.text]}>
         Login
       </Text>
       <View style={styles.inputContainer}>
-        <TextInput style={styles.input} />
+        <TextInput style={styles.input} 
+        value={login}
+        onChangeText={setLogin}
+        />
       </View>
       
       <Text style={[styles.label, styles.text]}>
         Senha
       </Text>
       <View style={styles.inputContainer}>
-        <TextInput style={styles.input} />
+        <TextInput style={styles.input}
+        value={password}
+        onChangeText={setPassword}
+        />
       </View>
       
       <TouchableOpacity
         style={[
           styles.button, 
-          { backgroundColor: naoSalvo ? "#008000" : "#808080" } // Verde se não salvo, cinza se salvo
+          { backgroundColor: save ? "#008000" : "#808080" } // Verde se não salvo, cinza se salvo
         ]}
         onPress={() => {
-          salvar(false);
+          handleRegister();
         }}
-        disabled={!naoSalvo}
+        disabled={!save}
       >
         <Text style={styles.buttonText}>
-          {naoSalvo ? 'Salvar' : 'Salvo!'}
+          {save ? 'Salvar' : 'Salvo!'}
         </Text>
       </TouchableOpacity>
     </View>
