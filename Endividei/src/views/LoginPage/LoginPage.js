@@ -10,6 +10,7 @@ const LoginPage = ({ navigation }) => {
     const password = passwordRef.current;
 
     console.log('username:', username, 'and password:', password);
+    navigation.navigate('movements');
   };
 
   return (
