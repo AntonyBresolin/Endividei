@@ -16,46 +16,44 @@ const LoginPage = ({ navigation }) => {
   return (
     <KeyboardAvoidingView
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-      style={{ flex: 1 }}
+      style={{ flex: 1, backgroundColor: '#151417' }} 
     >
       <ScrollView
-        contentContainerStyle={{ flexGrow: 1, justifyContent: 'center', alignItems: 'center' }}
+        contentContainerStyle={{ flexGrow: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#151417' }} 
         keyboardShouldPersistTaps="handled"
       >
-        <View className="flex-1 justify-center items-center bg-white p-4 w-full">
-          <Text className="text-2xl font-bold mb-6 text-gray-800">Bem vindo</Text>
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', padding: 16, width: '100%' }}>
+          <Text style={{ fontSize: 24, fontWeight: 'bold', marginBottom: 24, color: '#fff' }}>Faça seu login</Text>
 
           <TextInput
-            className="w-full h-12 border border-gray-400 rounded px-4 mb-4 bg-gray-100"
+            style={{ width: '100%', height: 48, borderColor: '#888', borderWidth: 1, borderRadius: 4, paddingHorizontal: 16, marginBottom: 16, backgroundColor: '#333', color: '#fff' }}
             placeholder="Nome de usuário"
             placeholderTextColor="#888"
             onChangeText={(text) => usernameRef.current = text}
           />
 
           <TextInput
-            className="w-full h-12 border border-gray-400 rounded px-4 mb-4 bg-gray-100"
+            style={{ width: '100%', height: 48, borderColor: '#888', borderWidth: 1, borderRadius: 4, paddingHorizontal: 16, marginBottom: 16, backgroundColor: '#333', color: '#fff' }}
             placeholder="Senha"
             placeholderTextColor="#888"
             secureTextEntry
             onChangeText={(text) => passwordRef.current = text}
           />
 
-          <TouchableOpacity className="w-full h-12 bg-blue-500 rounded justify-center items-center mt-4" onPress={handleLogin}>
-            <Text className="text-white text-lg font-semibold">Login</Text>
+          <TouchableOpacity style={{ width: '100%', height: 48, backgroundColor: '#407BFF', borderRadius: 4, justifyContent: 'center', alignItems: 'center', marginTop: 16 }} onPress={handleLogin}>
+            <Text style={{ color: '#fff', fontSize: 18, fontWeight: 'bold' }}>Entrar</Text>
           </TouchableOpacity>
 
-          <Text className="text-blue-500 mt-4">Esqueceu a senha?</Text>
-          <Text className="text-blue-500 mt-2"
-            onPress={() => navigation.navigate('register')}
-          >Criar uma conta</Text>
-          <Text className="text-gray-500 mt-6">Ou faça Login com</Text>
+          <Text style={{ color: '#407BFF', marginTop: 16 }}>Esqueceu sua senha ? </Text>
+          <Text style={{ color: '#407BFF', marginTop: 8 }} onPress={() => navigation.navigate('register')}>Não tenho uma conta</Text>
+          <Text style={{ color: '#888', marginTop: 24 }}>Ou faça Login com</Text>
 
-          <TouchableOpacity className="w-full h-12 bg-blue-700 rounded justify-center items-center mt-2">
-            <Text className="text-white text-lg">Facebook</Text>
+          <TouchableOpacity style={{ width: '100%', height: 48, backgroundColor: '#4267B2', borderRadius: 4, justifyContent: 'center', alignItems: 'center', marginTop: 8 }}>
+            <Text style={{ color: '#fff', fontSize: 18 }}>Facebook</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity className="w-full h-12 bg-red-500 rounded justify-center items-center mt-2">
-            <Text className="text-white text-lg">Google</Text>
+          <TouchableOpacity style={{ width: '100%', height: 48, backgroundColor: '#DB4437', borderRadius: 4, justifyContent: 'center', alignItems: 'center', marginTop: 8 }}>
+            <Text style={{ color: '#fff', fontSize: 18 }}>Google</Text>
           </TouchableOpacity>
 
           <StatusBar style="auto" />
